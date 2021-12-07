@@ -12,6 +12,26 @@ import { ShopComponent } from './shop/shop.component';
 import { ProductsComponent } from './shop/products/products.component';
 import { SingleProductComponent } from './shop/single-product/single-product.component';
 import { CartComponent } from './shop/cart/cart.component';
+import {  NotFoundComponent } from './shop/not-found/not-found.component';
+
+
+import { Routes, RouterModule } from '@angular/router';
+
+const routes: Routes = [
+  { path: 'home', component: HomeComponent },
+  { path: 'shop', component: ShopComponent },
+  { path: 'cart', component: CartComponent },
+  { path: 'home', component: HomeComponent },
+  { path: 'single-product/:id', component: SingleProductComponent }, // cette route nous permet d'afficher un produit, elle prend comme params l'id du produit
+  { path: 'contact', component: ContactComponent },
+  { path: 'login', component: LoginComponent },
+  { path: 'register', component: RegisterComponent },
+  { path: 'notfound', component: NotFoundComponent },
+  { path: '', component: ShopComponent },
+  { path: '**', redirectTo: 'notFound', pathMatch: 'full' }
+
+]
+
 
 @NgModule({
   declarations: [
@@ -28,7 +48,8 @@ import { CartComponent } from './shop/cart/cart.component';
     CartComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    RouterModule.forRoot(routes)
   ],
   providers: [],
   bootstrap: [AppComponent]
