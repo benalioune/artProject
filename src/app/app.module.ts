@@ -17,6 +17,9 @@ import {  NotFoundComponent } from './shop/not-found/not-found.component';
 
 
 import { Routes, RouterModule } from '@angular/router';
+import { QuickViewModalComponent } from './shop/quick-view-modal/quick-view-modal.component';
+import { AddToCartModalComponent } from './shop/add-to-cart-modal/add-to-cart-modal.component';
+import { CarousselComponent } from './caroussel/caroussel.component';
 
 const routes: Routes = [
   { path: 'home', component: HomeComponent },
@@ -46,7 +49,10 @@ const routes: Routes = [
     ShopComponent,
     ProductsComponent,
     SingleProductComponent,
-    CartComponent
+    CartComponent,
+    QuickViewModalComponent,
+    AddToCartModalComponent,
+    CarousselComponent
   ],
   imports: [
     BrowserModule,

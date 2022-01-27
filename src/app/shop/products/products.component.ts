@@ -1,5 +1,6 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Subscription } from 'rxjs';
+import { Products } from 'src/app/model/products';
 import { ProductsService } from 'src/app/services/products.service';
 
 @Component({
@@ -10,7 +11,7 @@ import { ProductsService } from 'src/app/services/products.service';
 export class ProductsComponent implements OnInit, OnDestroy {
 
   
-  products = [];
+  products: Products[] = [];
   urlImagePrefix = "http://localhost/e-commerce/Backendshop/images/products/";
   prodSub: Subscription;
 

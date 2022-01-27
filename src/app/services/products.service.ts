@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Subject } from 'rxjs';
 import { environment } from 'src/environments/environment';
+import { Products } from '../model/products';
 import { Result } from '../model/result';
 
 @Injectable({
@@ -9,8 +10,8 @@ import { Result } from '../model/result';
 })
 export class ProductsService {
 
-  products = []
-  prodSubject = new Subject<any[]>();
+  products: Products[] = [];
+  prodSubject = new Subject<Products[]>();
 
   constructor(private http: HttpClient) { 
     this.getProductsServer();
