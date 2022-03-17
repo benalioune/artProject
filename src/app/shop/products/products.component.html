@@ -36,7 +36,8 @@
               <div class="card-footer">
                   <div class="wcf-left">
                      
-                        <button type="button" class="btn btn-primary btn-circle btn-sm">
+
+                        <button type="button" class="btn btn-primary btn-circle btn-sm" data-toggle="modal" [attr.data-target]="'#add-to-cart-'+product.idProduct">
                              {{product.price}} <i class="bi bi-currency-euro"></i>
                              </button>
                            
@@ -64,3 +65,4 @@
 </html>
 
 <app-quick-view-modal [products] = "products" ></app-quick-view-modal>
+<app-add-to-cart-modal [products] = "products"></app-add-to-cart-modal>
