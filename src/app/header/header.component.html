@@ -17,7 +17,13 @@
         <button type="button" routerLink =  "/login" class="btn btn-outline-primary me-2">Login</button>
         <button type="button" routerLink =  "/register" class="btn btn-primary">Sign-up</button>
       </div>
-      <button type="button" routerLink =  "/register" class="btn btn-primary"> <span>Panier <i class="bi bi-cart-dash"></i></span> </button>
+      <button routerLink="/cart" type="button" class="btn btn-primary position-relative">
+        <i class="bi bi-cart"></i>
+        <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-warning">
+          {{ (cartData.cost).toFixed(2) }} <i class="bi bi-currency-euro"></i>
+          <span class="position-absolute top-100 start-0 translate-middle badge rounded-pill bg-danger">{{cartData.len}}</span>
+        </span>
+      </button>
     </header>
   </div>
   <app-caroussel></app-caroussel>

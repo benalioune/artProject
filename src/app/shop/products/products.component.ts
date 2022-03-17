@@ -1,6 +1,7 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Subscription } from 'rxjs';
 import { Products } from 'src/app/model/products';
+import { CartService } from 'src/app/services/cart.service';
 import { ProductsService } from 'src/app/services/products.service';
 import { environment } from 'src/environments/environment';
 
@@ -16,7 +17,7 @@ export class ProductsComponent implements OnInit, OnDestroy {
   urlImagePrefix = `${environment.urlImagePrefix}`; // evaluer l'environement depuis l'envirement de developement
   prodSub: Subscription;
 
-  constructor(private prodService: ProductsService) { }
+  constructor(private prodService: ProductsService, private cartService: CartService) { }
 
   ngOnInit(): void {
     this.prodSub = this.prodService.prodSubject.subscribe(
@@ -28,5 +29,14 @@ export class ProductsComponent implements OnInit, OnDestroy {
   }
   ngOnDestroy() {
     this.prodSub.unsubscribe();
+  }
+
+  addToCart(product: Products): void {
+    this.cartService.addProductToCard(product)
+  }
+
+  deleteFromCart(product: Products): void{
+    this.cartService.deleteFromCart(product);
+    
   }
 }
