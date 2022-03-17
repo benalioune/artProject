@@ -5,7 +5,8 @@
 export const environment = {
   production: false,
   API: "http://localhost/e-commerce/Backendshop/api/",
-  API_KEY: "API_KEY=adsffsdfds6b-6727-46f4-8bee-2c6ce6293e41"
+  API_KEY: "API_KEY=adsffsdfds6b-6727-46f4-8bee-2c6ce6293e41",
+  urlImagePrefix: "http://localhost/e-commerce/Backendshop/images/products/"
   
 };
 

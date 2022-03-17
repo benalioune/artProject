@@ -123,12 +123,15 @@ body{
   }
   
   .card-footer .wcf-left{
-    float:left;
+    float: left;
+    padding: 5%;
     
   }
   
   .card-footer .wcf-right{
-    float:right;
+    float: right;
+    padding: 5%;
+    padding-bottom: 5%;
   }
   
   .price{
@@ -208,4 +211,23 @@ body{
     background-color: #fff;
     color: #212121;
   }
-  
+
+  .btn-circle.btn-xl {
+    width: 95px;
+    height: 70px;
+    padding: 10px 16px;
+    border-radius: 35px;
+    font-size: 24px;
+    line-height: 1.33;
+}
+
+.btn-circle {
+    width: 70px;
+    height: 25px;
+    padding: 6px 0px;
+    border-radius: 15px;
+    text-align: center;
+    font-size: 11px;
+    line-height: 1.42857;
+}
+

@@ -6,6 +6,10 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>product page</title>
 </head>
+<script>
+
+
+</script>
 <body>
     
 
@@ -14,25 +18,37 @@
       <div class="row">
         <div class="col-md-3" *ngFor="let product of products">
           <div class="wsk-cp-product">
+
             <div class="wsk-cp-img">
+              <a href="#" data-toggle="modal" [attr.data-target]= "'#quick-view-'+product.idProduct"> <!-- lorsqu'on clique sur ce produit c'est avec l'id sur notre data-targer qui va permettre de le lier avec l'id du modal -->
               <img [src]="urlImagePrefix + product.image" />
+            </a>
             </div>
             <div class="wsk-cp-text">
               <div class="category">
-               <span> <a>  Voir <i class="bi bi-hand-index"></i>  </a>  </span>
-              </div>
+                <img class="rounded-circle" alt="50x50" width="60px" height="60px" src="https://mdbootstrap.com/img/Photos/Avatars/img%20(30).jpg"
+                data-holder-rendered="true">
+                            </div>
               <div class="title-product">
                 <h3>{{product.name}}</h3>
               </div>
              <p>{{product.description}}</p>
               <div class="card-footer">
-                    <div class="btn-group btn-group-toggle" data-toggle="buttons">
-                            <button type="button" class="btn btn-primary">
-                                     <i class="bi bi-cart-fill"></i> <span class="badge badge-light">{{product.price}}</span>
-                                    
-                                  </button>
-                                  
-                          </div>
+                  <div class="wcf-left">
+                     
+                        <button type="button" class="btn btn-primary btn-circle btn-sm">
+                             {{product.price}} <i class="bi bi-currency-euro"></i>
+                             </button>
+                           
+                  </div>
+                        <div class="wcf-right">
+                          <i class="bi bi-star-fill"></i>
+                          <i class="bi bi-star-fill"></i>
+                          <i class="bi bi-star-fill"></i>
+                          <i class="bi bi-star-fill"></i>
+                          <i class="bi bi-star"></i>
+                          </div>  
+
               </div>
               
             </div>
@@ -46,3 +62,5 @@
 
 </body>
 </html>
+
+<app-quick-view-modal [products] = "products" ></app-quick-view-modal>

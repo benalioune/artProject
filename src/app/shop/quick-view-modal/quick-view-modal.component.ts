@@ -1,4 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { Products } from 'src/app/model/products';
+import { environment } from 'src/environments/environment';
+
 
 @Component({
   selector: 'app-quick-view-modal',
@@ -7,7 +10,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class QuickViewModalComponent implements OnInit {
 
-  constructor() { }
+
+
+  @Input() products: Products[]; // ce component n'existerait pas si on ne clique pas sur un produit | le @input permettra de recuperer l'id du produit cliqué et generer le template view product du produit cliqué
+
+  urlImagePrefix = `${environment.urlImagePrefix}`;
+
+  
+
+  constructor() { }        
 
   ngOnInit(): void {
   }

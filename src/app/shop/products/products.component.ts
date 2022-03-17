@@ -2,6 +2,7 @@ import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Subscription } from 'rxjs';
 import { Products } from 'src/app/model/products';
 import { ProductsService } from 'src/app/services/products.service';
+import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-products',
@@ -12,7 +13,7 @@ export class ProductsComponent implements OnInit, OnDestroy {
 
   
   products: Products[] = [];
-  urlImagePrefix = "http://localhost/e-commerce/Backendshop/images/products/";
+  urlImagePrefix = `${environment.urlImagePrefix}`; // evaluer l'environement depuis l'envirement de developement
   prodSub: Subscription;
 
   constructor(private prodService: ProductsService) { }

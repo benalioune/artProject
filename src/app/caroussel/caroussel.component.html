@@ -1,15 +1,14 @@
-
-<body>
-    <input type="radio" name="position" checked />
-    <input type="radio" name="position" />
-    <input type="radio" name="position" />
-    <input type="radio" name="position" />
-    <input type="radio" name="position" />
-    <main id="carousel">
-      <div class="item"></div>
-      <div class="item"></div>
-      <div class="item"></div>
-      <div class="item"></div>
-      <div class="item"></div>
-      <main>
-
+<div class="container-fluid">  
+  <ngb-carousel>
+    <ng-template ngbSlide *ngFor="let image of images">
+      <div class="wrapper">
+        <img [src]="image.src" alt="Random first slide">
+      </div>
+      <div class="carousel-caption">
+        <h3>{{ image.title }}</h3>
+        <p>{{ image.short }}</p>
+      </div>
+    </ng-template>
+  </ngb-carousel>
+       <hr>
+  </div>
