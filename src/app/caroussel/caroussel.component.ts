@@ -19,9 +19,9 @@ export class CarousselComponent implements OnInit {
   }
 
   images = [
-    {title: 'First Slide', short: 'First Slide Short', src: "https://picsum.photos/id/700/900/500"},
-    {title: 'Second Slide', short: 'Second Slide Short', src: "https://picsum.photos/id/1011/900/500"},
-    {title: 'Third Slide', short: 'Third Slide Short', src: "https://picsum.photos/id/984/900/500"}
+    {title: 'First Slide', short: 'First Slide Short', src: "https://www.studyrama.com/local/cache-vignettes/L990xH363/arton105299-bf271.jpg?1610385335"},
+    {title: 'Second Slide', short: 'Second Slide Short', src: "https://www.studyrama.com/local/cache-vignettes/L990xH353/arton107776-eb212.png?1610532906"},
+    {title: 'Third Slide', short: 'Third Slide Short', src: "https://www.lisaa.com/sites/default/files/lisaa-nantes-design-mode-unicef-frimousses-createurs.jpg"}
   ];
 
   ngOnInit(): void {
