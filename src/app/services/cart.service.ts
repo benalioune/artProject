@@ -1,5 +1,4 @@
 import { Injectable } from '@angular/core';
-import { element } from 'protractor';
 import { Cart } from '../model/cart';
 import { Products } from '../model/products';
 
@@ -54,6 +53,12 @@ export class CartService {
         this.cart.splice(indexProduct, 1);
       }
     }
+    this.updateDataCart();
+  }
+
+
+  removeElementOfCart(index: number): void{
+    this.cart.splice(index,1);
     this.updateDataCart();
   }
 

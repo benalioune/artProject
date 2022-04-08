@@ -1,6 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Products } from 'src/app/model/products';
 import { environment } from 'src/environments/environment';
+import { CartService } from '../../services/cart.service';
 
 
 @Component({
@@ -18,9 +19,13 @@ export class QuickViewModalComponent implements OnInit {
 
   
 
-  constructor() { }        
+  constructor(private cartService: CartService) { }
 
   ngOnInit(): void {
+  }
+
+  addCart(product: Products): void{
+    this.cartService.addProductToCard(product);
   }
 
 }

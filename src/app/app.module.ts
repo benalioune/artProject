@@ -1,6 +1,8 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import {  HttpClientModule} from '@angular/common/http'
+import { AuthGuard } from './services/auth.guard';
+import { HttpClientModule } from '@angular/common/http'
+import { NgxPayPalModule } from 'ngx-paypal';
 
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
@@ -19,8 +21,11 @@ import {  NotFoundComponent } from './shop/not-found/not-found.component';
 import { Routes, RouterModule } from '@angular/router';
 import { QuickViewModalComponent } from './shop/quick-view-modal/quick-view-modal.component';
 import { AddToCartModalComponent } from './shop/add-to-cart-modal/add-to-cart-modal.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CarousselComponent } from './caroussel/caroussel.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { CheckoutComponent } from './shop/checkout/checkout.component';
+import { ButtonPaypalComponent } from './shop/button-paypal/button-paypal.component';
 
 const routes: Routes = [
   { path: 'home', component: HomeComponent },
@@ -31,6 +36,7 @@ const routes: Routes = [
   { path: 'contact', component: ContactComponent },
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent },
+  {path:'checkout',canActivate: [AuthGuard], component: CheckoutComponent},
   { path: 'notfound', component: NotFoundComponent },
   { path: '', component: ShopComponent },
   { path: '**', redirectTo: 'notFound', pathMatch: 'full' }
@@ -53,13 +59,18 @@ const routes: Routes = [
     CartComponent,
     QuickViewModalComponent,
     AddToCartModalComponent,
-    CarousselComponent
+    CarousselComponent,
+    CheckoutComponent,
+    ButtonPaypalComponent
   ],
   imports: [
     BrowserModule,
     RouterModule.forRoot(routes),
     HttpClientModule,
-    NgbModule
+    FormsModule,
+    ReactiveFormsModule,
+    NgbModule,
+    NgxPayPalModule
   ],
   providers: [],
   bootstrap: [AppComponent]
