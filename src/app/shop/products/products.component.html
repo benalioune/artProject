@@ -11,7 +11,29 @@
 
 </script>
 <body>
+
+    <div class="pagination" >
+
+            <nav aria-label="Page navigation ecommerce" class="pagination e-commerce" *ngIf="isPaginate">
+                    <ul class="pagination">
+                        <li class="page-item" (click)="prevPage()">
+                            <a class="page-link" aria-label="Previous">
+                                <span aria-hidden="true">&laquo;</span>
+                            </a>
+                        </li>
+                        <li class="page-item" *ngFor="let page of pages" [ngClass]="{'active': page==currentPage}" (click)="changePage(page)"><a class="page-link">{{ page+1 }}</a></li>
+                        <li class="page-item" (click)="nextPage()">
+                            <a class="page-link" aria-label="Next">
+                                <span aria-hidden="true">&raquo;</span>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+
+    </div>
     
+ 
+
 
 <div class="shell">
     <div class="container">
@@ -66,3 +88,4 @@
 
 <app-quick-view-modal [products] = "products"></app-quick-view-modal>
 <app-add-to-cart-modal [products] = "products"></app-add-to-cart-modal>
+

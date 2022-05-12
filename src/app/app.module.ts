@@ -26,6 +26,8 @@ import { CarousselComponent } from './caroussel/caroussel.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { CheckoutComponent } from './shop/checkout/checkout.component';
 import { ButtonPaypalComponent } from './shop/button-paypal/button-paypal.component';
+import { CategoryComponent } from './category/category.component';
+import { WelcomeComponent } from './welcome/welcome.component';
 
 const routes: Routes = [
   { path: 'home', component: HomeComponent },
@@ -33,6 +35,7 @@ const routes: Routes = [
   { path: 'cart', component: CartComponent },
   { path: 'home', component: HomeComponent },
   { path: 'single-product/:id', component: SingleProductComponent }, // cette route nous permet d'afficher un produit, elle prend comme params l'id du produit
+  {path:'category/:id', component: CategoryComponent},
   { path: 'contact', component: ContactComponent },
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent },
@@ -61,7 +64,9 @@ const routes: Routes = [
     AddToCartModalComponent,
     CarousselComponent,
     CheckoutComponent,
-    ButtonPaypalComponent
+    ButtonPaypalComponent,
+    CategoryComponent,
+    WelcomeComponent
   ],
   imports: [
     BrowserModule,
@@ -71,6 +76,7 @@ const routes: Routes = [
     ReactiveFormsModule,
     NgbModule,
     NgxPayPalModule
+
   ],
   providers: [],
   bootstrap: [AppComponent]

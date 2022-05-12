@@ -1,0 +1,20 @@
+body{
+    background: radial-gradient(circle, #0077ea, #1f4f96, #1b2949, #000);
+}
+
+
+.sousTitre{
+
+    margin: 0 auto;
+   
+        font-family:Arial, Helvetica, sans-serif;
+        font-size: 71px;
+        font-weight: 100;
+        color: #ddd;
+        text-transform: none;
+        font-style: normal;
+        text-decoration: none;
+        line-height: 2em;
+        letter-spacing: 0px;
+   
+}

@@ -14,6 +14,12 @@ body{
     position:relative;
     margin:20px auto;
   }
+
+  .pagination{
+  
+    margin: 0 auto;
+  }
+
   .wsk-cp-img{
     position:absolute;
     top:5px;
@@ -231,3 +237,11 @@ body{
     line-height: 1.42857;
 }
 
+
+.seconNav{
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+}

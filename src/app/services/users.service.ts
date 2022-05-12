@@ -62,11 +62,7 @@ export class UsersService {
 
         this.http.get<Result>(url).subscribe(
           (data: Result) => {
-            let stringified = JSON.stringify(data);
-            let parsed = JSON.parse(stringified); 
-         
-            
-
+           
             if(data.status == 200){
               this.user = data.args;
               this.isAuth = true;
@@ -76,7 +72,7 @@ export class UsersService {
               
             }else{
               reject(data.message);
-              console.log(parsed);
+    
             
             }
 
@@ -94,8 +90,5 @@ export class UsersService {
    this.isAuth = false;
    this.userSubject = new Subject<Users>();
  }
-
-
-
 
 }
