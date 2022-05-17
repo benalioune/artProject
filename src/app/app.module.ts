@@ -28,12 +28,13 @@ import { CheckoutComponent } from './shop/checkout/checkout.component';
 import { ButtonPaypalComponent } from './shop/button-paypal/button-paypal.component';
 import { CategoryComponent } from './category/category.component';
 import { WelcomeComponent } from './welcome/welcome.component';
+import { ArtistComponent } from './artist/artist.component';
 
 const routes: Routes = [
-  { path: 'home', component: HomeComponent },
   { path: 'shop', component: ShopComponent },
   { path: 'cart', component: CartComponent },
   { path: 'home', component: HomeComponent },
+  { path: 'artist', component: ArtistComponent },
   { path: 'single-product/:id', component: SingleProductComponent }, // cette route nous permet d'afficher un produit, elle prend comme params l'id du produit
   {path:'category/:id', component: CategoryComponent},
   { path: 'contact', component: ContactComponent },
@@ -66,7 +67,8 @@ const routes: Routes = [
     CheckoutComponent,
     ButtonPaypalComponent,
     CategoryComponent,
-    WelcomeComponent
+    WelcomeComponent,
+    ArtistComponent
   ],
   imports: [
     BrowserModule,

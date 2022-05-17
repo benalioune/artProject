@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Artists</title>
+</head>
+<body>
+<app-header></app-header>
+
+<div class="container">
+
+    <div class="row">
+        
+            <div class="col-md-3" *ngFor="let artist of artistAll " >
+
+                    <section class="mx-auto my-5" style="max-width: 23rem;">
+            
+                            <div  class="card testimonial-card mt-2 mb-3">
+                              <div class="card-up aqua-gradient"></div>
+                              <div class="avatar mx-auto white">
+                                <img src="{{artist.imgProfile}}" class="rounded-circle img-fluid"
+                                  alt="woman avatar">
+                              </div>
+                              <div class="card-body text-center">
+                                <h4 class="card-title font-weight-bold">{{artist.name}}</h4>
+                                <hr>
+                                <p><i class="fas fa-quote-left"></i> {{artist.description}} ...</p>
+                              </div>
+                              <div class="card-footer">
+
+                                    <div class="col-xs-12 col-sm-12 col-md-12 mt-2 mt-sm-5">
+                                            <ul class="list-unstyled list-inline social text-center">
+                                                    <li class="list-inline-item"><a href="{{snapchat}}"><i class="fa fa-snapchat"></i></a></li>
+                                                <li class="list-inline-item"><a href="{{twitter}}"><i class="fa fa-twitter"></i></a></li>
+                                                <li class="list-inline-item"><a href="{{instagram}}"><i class="fa fa-instagram"></i></a></li>
+                                                <li class="list-inline-item"><a href="https://www.fiverr.com/share/qb8D02"><i class="fa fa-google-plus"></i></a></li>
+                                                <li class="list-inline-item"><a href="https://www.fiverr.com/share/qb8D02" target="_blank"><i class="fa fa-envelope"></i></a></li>
+                                            </ul>
+                                        </div>
+                                
+                              </div>
+                            </div>
+                            
+                          </section>
+                    
+                  </div>
+    </div>
+
+    <app-footer></app-footer>
+      </div>
+
+
+    
+</body>
+</html>
